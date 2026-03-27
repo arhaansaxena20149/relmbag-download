@@ -1,36 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>RelmBag Download</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #0f172a;
-      color: white;
-      padding: 50px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .btn {
-      display: block;
-      margin: 20px auto;
-      padding: 15px;
-      width: 250px;
-      background: #22c55e;
-      color: black;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 18px;
-    }
-  </style>
+<title>RelmBag</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-bottom: 50px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  width: 320px;
+  margin: auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.btn {
+  display: block;
+  margin: 15px auto;
+  padding: 16px;
+  width: 260px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.windows {
+  background: #22c55e;
+  color: black;
+}
+
+.windows:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+.mac {
+  background: #3b82f6;
+  color: white;
+}
+
+.mac:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.primary {
+  border: 2px solid gold;
+  box-shadow: 0 0 20px gold;
+}
+
+.footer {
+  margin-top: 40px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.badge {
+  margin-top: 15px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Download RelmBag</h1>
+<div class="container">
+  <h1>RelmBag</h1>
+  <div class="subtitle">Fast • Secure • Lightweight</div>
 
-<a class="btn" href="https://github.com/arhaansaxena20149/relmbag-download/releases/download/pre-release/RelmBag.Player.exe">Download for Windows</a>
-<a class="btn" href="https://github.com/arhaansaxena20149/relmbag-download/releases/download/pre-release/RelmBag.Player.0.0.0.dmg">Download for Mac</a>
+  <div class="card">
+
+    <a id="winBtn" class="btn windows" href="https://github.com/arhaansaxena20149/relmbag-download/releases/download/pre-release/RelmBag.Player.exe">
+      💻 Download for Windows
+    </a>
+
+    <a id="macBtn" class="btn mac" href="https://github.com/arhaansaxena20149/relmbag-download/releases/download/pre-release/RelmBag.Player.0.0.0.dmg">
+      🍎 Download for Mac
+    </a>
+
+    <div class="badge">Version: Pre-release</div>
+
+  </div>
+
+  <div class="footer">
+    Safe download • No ads • Open source ready
+  </div>
+</div>
+
+<script>
+// Detect OS
+const userAgent = navigator.userAgent.toLowerCase();
+
+const winBtn = document.getElementById("winBtn");
+const macBtn = document.getElementById("macBtn");
+
+if (userAgent.includes("mac")) {
+  macBtn.classList.add("primary");
+} else if (userAgent.includes("win")) {
+  winBtn.classList.add("primary");
+}
+</script>
 
 </body>
 </html>
